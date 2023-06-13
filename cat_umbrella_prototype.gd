@@ -6,8 +6,6 @@ extends Node2D
 
 
 
-
-
 func _on_umbrella_area_exited(area):
 	if area is Cat:
 		qm_debug.visible = true

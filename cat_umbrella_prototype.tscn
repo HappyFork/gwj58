@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://lhwk0kq71we1"]
+
+[ext_resource type="Script" path="res://cat_umbrella_prototype.gd" id="1_ysic5"]
+[ext_resource type="PackedScene" uid="uid://cxs4p67nbq872" path="res://nodes/umbrella.tscn" id="2_prl76"]
+[ext_resource type="PackedScene" uid="uid://dw53qcq418283" path="res://nodes/cat.tscn" id="3_ywddm"]
+[ext_resource type="Texture2D" uid="uid://dcmcalkmm0ry1" path="res://assets/QuestionMark.png" id="4_y7ttk"]
+
+[node name="CatUmbrellaPrototype" type="Node2D"]
+script = ExtResource("1_ysic5")
+
+[node name="Umbrella" parent="." instance=ExtResource("2_prl76")]
+position = Vector2(599, 514)
+
+[node name="Cat" parent="." instance=ExtResource("3_ywddm")]
+position = Vector2(599, 531)
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+light_mask = 3
+position = Vector2(600, 0)
+amount = 1000
+lifetime = 2.0
+emission_shape = 3
+emission_rect_extents = Vector2(600, 1)
+direction = Vector2(0, 1)
+initial_velocity_max = 152.38
+
+[node name="QuestionMark" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(955, 206)
+texture = ExtResource("4_y7ttk")
+
+[connection signal="area_exited" from="Umbrella" to="." method="_on_umbrella_area_exited"]

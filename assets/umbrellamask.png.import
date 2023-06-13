@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcmcalkmm0ry1"
-path="res://.godot/imported/QuestionMark.png-430234a19f6ffa70aa8a1297f30e22bd.ctex"
+uid="uid://diq3l7q1lmuse"
+path="res://.godot/imported/umbrellamask.png-34c9a630ea93452edfbb56b6061721c9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://catumbrella/assets/QuestionMark.png"
-dest_files=["res://.godot/imported/QuestionMark.png-430234a19f6ffa70aa8a1297f30e22bd.ctex"]
+source_file="res://assets/umbrellamask.png"
+dest_files=["res://.godot/imported/umbrellamask.png-34c9a630ea93452edfbb56b6061721c9.ctex"]
 
 [params]
 

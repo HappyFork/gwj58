@@ -1,7 +1,6 @@
-res://sokoban/sokoban_prototype.tscn
-res://sokoban/nodes/Player.gd
-res://catumbrella/cat_umbrella_prototype.tscn
-res://catumbrella/Cat.gd
-res://catumbrella/Umbrella.gd
-res://catumbrella/cat_umbrella_prototype.gd
-res://catumbrella/nodes/Cat.gd
+res://cat_umbrella_prototype.tscn
+res://nodes/Cat.gd
+res://cat_umbrella_prototype.gd
+res://nodes/umbrella.tscn
+res://nodes/cat.tscn
+res://nodes/Umbrella.gd

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://by4g64mkwpqo6"
-path="res://.godot/imported/Tile.png-4eb0ba881359cb1dfb38a1dde78b5f0b.ctex"
+uid="uid://dcmcalkmm0ry1"
+path="res://.godot/imported/QuestionMark.png-9426ecf4cdf3d00592eccadee3cc5055.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sokoban/assets/Tile.png"
-dest_files=["res://.godot/imported/Tile.png-4eb0ba881359cb1dfb38a1dde78b5f0b.ctex"]
+source_file="res://assets/QuestionMark.png"
+dest_files=["res://.godot/imported/QuestionMark.png-9426ecf4cdf3d00592eccadee3cc5055.ctex"]
 
 [params]
 

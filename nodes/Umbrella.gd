@@ -1,7 +1,7 @@
 extends Area2D
 
 
-const  UMB_HEIGHT = 200
+const  UMB_HEIGHT = 350 # Umbrella area's height/2 - 50
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

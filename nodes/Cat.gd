@@ -15,6 +15,7 @@ func _ready():
 
 
 
+# Called every 4 seconds
 func _on_action_timer_timeout():
 	var choice = randi_range(0, 3)
 	
