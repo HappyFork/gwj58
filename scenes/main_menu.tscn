@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctrpj0fg2ev5v"]
+
+[ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_dskr1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lj72t"]
+font_size = 24
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_dskr1")
+
+[node name="PlayButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 556.0
+offset_top = 150.0
+offset_right = 597.0
+offset_bottom = 181.0
+text = "Play"
+
+[node name="TitleLabel" type="Label" parent="."]
+layout_mode = 1
+offset_left = 494.0
+offset_top = 200.0
+offset_right = 659.0
+offset_bottom = 237.0
+size_flags_vertical = 0
+text = "Kitty Cover :3c"
+label_settings = SubResource("LabelSettings_lj72t")
+
+[node name="CreditsLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 486.0
+offset_top = 417.0
+offset_right = 666.0
+offset_bottom = 469.0
+text = "Code by Happyfork
+Art by subvertissement
+"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]

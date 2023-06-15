@@ -1,19 +1,34 @@
-[gd_scene load_steps=3 format=3 uid="uid://dw53qcq418283"]
+[gd_scene load_steps=5 format=3 uid="uid://dw53qcq418283"]
 
-[ext_resource type="Script" path="res://nodes/Cat.gd" id="1_30f4h"]
+[ext_resource type="Script" path="res://nodes/cat.gd" id="1_vj0s0"]
+[ext_resource type="Texture2D" uid="uid://dde00bt31u85w" path="res://assets/boat.png" id="2_7am41"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yp1f7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1gk7m"]
-size = Vector2(86, 56)
 
-[node name="Cat" type="Area2D"]
-script = ExtResource("1_30f4h")
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_1gk7m")
+[node name="Cat" type="Node2D"]
+script = ExtResource("1_vj0s0")
 
 [node name="ActionTimer" type="Timer" parent="."]
-wait_time = 4.0
-autostart = true
+one_shot = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+light_mask = 2
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_7am41")
+
+[node name="TailArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TailArea"]
+position = Vector2(-50, 0)
+shape = SubResource("RectangleShape2D_yp1f7")
+
+[node name="HeadArea" type="Area2D" parent="."]
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HeadArea"]
+position = Vector2(50, 0)
+shape = SubResource("RectangleShape2D_1gk7m")
 
 [connection signal="timeout" from="ActionTimer" to="." method="_on_action_timer_timeout"]
