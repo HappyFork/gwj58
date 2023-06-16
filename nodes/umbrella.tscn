@@ -1,22 +1,24 @@
 [gd_scene load_steps=5 format=3 uid="uid://cxs4p67nbq872"]
 
-[ext_resource type="Script" path="res://nodes/Umbrella.gd" id="1_l070b"]
-[ext_resource type="Texture2D" uid="uid://x3qgv3mcrrrm" path="res://assets/platform.png" id="2_x2waa"]
+[ext_resource type="Script" path="res://nodes/umbrella.gd" id="1_yh3lo"]
+[ext_resource type="Texture2D" uid="uid://btadv6e6iik7h" path="res://assets/umbrella.png" id="2_dy7rt"]
 [ext_resource type="Texture2D" uid="uid://diq3l7q1lmuse" path="res://assets/umbrellamask.png" id="3_rcbsn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wwr4k"]
 size = Vector2(350, 800)
 
 [node name="Umbrella" type="Area2D"]
-script = ExtResource("1_l070b")
+script = ExtResource("1_yh3lo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_wwr4k")
 
 [node name="Platform" type="Sprite2D" parent="."]
+light_mask = 0
 position = Vector2(0, -400)
-scale = Vector2(1.17, 1)
-texture = ExtResource("2_x2waa")
+scale = Vector2(1.36, 1.36)
+texture = ExtResource("2_dy7rt")
+offset = Vector2(0, 48)
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 blend_mode = 1
