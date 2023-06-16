@@ -32,9 +32,10 @@ position = Vector2(599, 556)
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 modulate = Color(0.470588, 1, 1, 1)
 light_mask = 3
-position = Vector2(600, 0)
-amount = 1000
+position = Vector2(600, -110)
+amount = 2000
 lifetime = 2.0
+preprocess = 1.0
 local_coords = true
 emission_shape = 3
 emission_rect_extents = Vector2(600, 1)

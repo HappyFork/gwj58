@@ -33,9 +33,9 @@ func _ready():
 
 # Decides what the cat does next, then does it!
 func decide():
-	print("Deciding!")
+	#print("Deciding!")
 	
-	var choice = randi_range(0, 3) # Pick a random number between 0-2
+	var choice = randi_range(0, 2) # Pick a random number between 0-2
 	# 0 = Wait, 1 = Move right, 2 = Move left
 	
 	# I'm embarrassed by how much copy-pasted code is below.
@@ -57,9 +57,9 @@ func decide():
 		tween.tween_property( self, "position", dest, move_time )
 		tween.tween_callback( decide )
 	else:
+		# If the cat doesn't want to move or it cant.
 		animate_cat("idle")
-		# If the cat doesn't want to move or it cant. This isn't ideal, it means
-		# the cat only has a 1/3 chance of moving out of a corner.
+		# This isn't ideal, it means the cat only has a 1/3 chance of moving out of a corner.
 		# TODO: Random wait time?
 		timer.start()
 		# I probably don't need a timer node at this point... but whatever.
