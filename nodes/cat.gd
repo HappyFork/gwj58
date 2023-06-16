@@ -12,6 +12,7 @@ extends Node2D
 
 # Onready variables
 @onready var timer = $ActionTimer
+@onready var animated_sprite_2d = $AnimatedSprite2D
 
 # Regular variables
 var can_move_left = true
@@ -41,6 +42,7 @@ func decide():
 	# TODO: Random movement speed and distance? At least distance.
 	if choice == 1 and can_move_right:
 		# If the cat wants to move right and it can
+		animate_cat("right")
 		var tween = create_tween()
 		var dest = position
 		dest.x += move_dist
@@ -48,18 +50,33 @@ func decide():
 		tween.tween_callback( decide )
 	elif choice == 2 and can_move_left:
 		# If the cat wants to move left and it can
+		animate_cat("left")
 		var tween = create_tween()
 		var dest = position
 		dest.x -= move_dist
 		tween.tween_property( self, "position", dest, move_time )
 		tween.tween_callback( decide )
 	else:
+		animate_cat("idle")
 		# If the cat doesn't want to move or it cant. This isn't ideal, it means
 		# the cat only has a 1/3 chance of moving out of a corner.
 		# TODO: Random wait time?
 		timer.start()
 		# I probably don't need a timer node at this point... but whatever.
 
+# called from within decide()
+# sets the cat's animation based on decide()'s result
+func animate_cat(direction:String):
+	match direction: # could've used an if-elif-else, but i like match ;P -ph
+		"right":
+			animated_sprite_2d.flip_h = false
+			animated_sprite_2d.play("walking")
+		"left":
+			animated_sprite_2d.flip_h = true
+			animated_sprite_2d.play("walking")
+		_:
+			# _: acts like an "else"
+			animated_sprite_2d.play("idle")
 
 
 ### --- Signal functions --- ###
