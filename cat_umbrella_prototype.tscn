@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://lhwk0kq71we1"]
+[gd_scene load_steps=7 format=3 uid="uid://lhwk0kq71we1"]
 
 [ext_resource type="Script" path="res://cat_umbrella_prototype.gd" id="1_ysic5"]
 [ext_resource type="PackedScene" uid="uid://cxs4p67nbq872" path="res://nodes/umbrella.tscn" id="2_prl76"]
 [ext_resource type="PackedScene" uid="uid://dw53qcq418283" path="res://nodes/cat.tscn" id="3_ywddm"]
 [ext_resource type="Texture2D" uid="uid://dcmcalkmm0ry1" path="res://assets/QuestionMark.png" id="4_y7ttk"]
+[ext_resource type="Texture2D" uid="uid://tcv1xkrx43ef" path="res://assets/main_scene.png" id="5_t1vtg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4iy10"]
 size = Vector2(200, 40)
@@ -11,11 +12,22 @@ size = Vector2(200, 40)
 [node name="CatUmbrellaPrototype" type="Node2D"]
 script = ExtResource("1_ysic5")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+light_mask = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_t1vtg")
+metadata/_edit_use_anchors_ = true
+
 [node name="Umbrella" parent="." instance=ExtResource("2_prl76")]
 position = Vector2(599, 514)
 
 [node name="Cat" parent="." instance=ExtResource("3_ywddm")]
-position = Vector2(599, 531)
+position = Vector2(599, 556)
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 modulate = Color(0.470588, 1, 1, 1)
@@ -23,6 +35,7 @@ light_mask = 3
 position = Vector2(600, 0)
 amount = 1000
 lifetime = 2.0
+local_coords = true
 emission_shape = 3
 emission_rect_extents = Vector2(600, 1)
 direction = Vector2(0, 1)
@@ -34,14 +47,14 @@ position = Vector2(955, 206)
 texture = ExtResource("4_y7ttk")
 
 [node name="StopMovingLeft" type="Area2D" parent="."]
-position = Vector2(0, 532)
+position = Vector2(0, 557)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StopMovingLeft"]
 shape = SubResource("RectangleShape2D_4iy10")
 
 [node name="StopMovingRight" type="Area2D" parent="."]
-position = Vector2(1152, 532)
+position = Vector2(1024, 557)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StopMovingRight"]
