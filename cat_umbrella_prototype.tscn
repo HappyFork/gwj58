@@ -1,9 +1,8 @@
-[gd_scene load_steps=33 format=3 uid="uid://lhwk0kq71we1"]
+[gd_scene load_steps=32 format=3 uid="uid://lhwk0kq71we1"]
 
 [ext_resource type="Script" path="res://cat_umbrella_prototype.gd" id="1_ysic5"]
-[ext_resource type="PackedScene" uid="uid://wlc7txoosvdy" path="res://nodes/umbrella.tscn" id="2_prl76"]
-[ext_resource type="PackedScene" uid="uid://2q72ftcx8sot" path="res://nodes/cat.tscn" id="3_ywddm"]
-[ext_resource type="Texture2D" uid="uid://dcmcalkmm0ry1" path="res://assets/QuestionMark.png" id="4_y7ttk"]
+[ext_resource type="PackedScene" uid="uid://yjuiarqahubu" path="res://nodes/umbrella.tscn" id="2_prl76"]
+[ext_resource type="PackedScene" uid="uid://cia2n0d436rro" path="res://nodes/cat.tscn" id="3_ywddm"]
 [ext_resource type="Texture2D" uid="uid://tcv1xkrx43ef" path="res://assets/main_scene.png" id="5_t1vtg"]
 [ext_resource type="Texture2D" uid="uid://bsqqljx2jp3rb" path="res://assets/arm-tuna.png" id="6_s8nap"]
 [ext_resource type="PackedScene" uid="uid://h0lr2m7322pi" path="res://nodes/tuna.tscn" id="7_kc8do"]
@@ -216,11 +215,6 @@ position = Vector2(599, 514)
 [node name="Cat" parent="." instance=ExtResource("3_ywddm")]
 position = Vector2(599, 556)
 
-[node name="QuestionMark" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(955, 206)
-texture = ExtResource("4_y7ttk")
-
 [node name="StopMovingLeft" type="Area2D" parent="."]
 position = Vector2(0, 557)
 metadata/_edit_group_ = true
@@ -250,9 +244,13 @@ wait_time = 3.0
 one_shot = true
 autostart = true
 
+[node name="ScoreTimer" type="Timer" parent="."]
+autostart = true
+
 [connection signal="area_exited" from="Umbrella" to="." method="_on_umbrella_area_exited"]
 [connection signal="area_entered" from="StopMovingLeft" to="Cat" method="_on_stop_moving_left_area_entered"]
 [connection signal="area_exited" from="StopMovingLeft" to="Cat" method="_on_stop_moving_left_area_exited"]
 [connection signal="area_entered" from="StopMovingRight" to="Cat" method="_on_stop_moving_right_area_entered"]
 [connection signal="area_exited" from="StopMovingRight" to="Cat" method="_on_stop_moving_right_area_exited"]
 [connection signal="timeout" from="TunaTimer" to="." method="_on_tuna_timer_timeout"]
+[connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]

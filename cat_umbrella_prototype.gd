@@ -3,25 +3,42 @@ extends Node2D
 
 
 ### --- Variables --- ###
-@onready var qm_debug = $QuestionMark
+
+# Onready variables
 @onready var arm_serving_tuna = $ArmServingTuna
 @onready var tuna = $Tuna
 @onready var tuna_timer = $TunaTimer
+@onready var cat = $Cat
 
+# Regular variables
+var ending = load("res://scenes/end_screen.tscn")
+
+
+
+### --- Engine Functions --- ###
+
+# Ready. Called when the scene starts
 func _ready():
 	# connects signal from the tuna
 	tuna.connect("tuna_picked_up", _on_tuna_bonus_activated)
 
-### --- Functions --- ###
-func _on_umbrella_area_exited(area):
-	if area.get_parent() is Cat:
-		qm_debug.visible = true
+
+### --- Custom Functions --- ###
 
 # activates the tuna delivery
 func _the_fish_is_served():
 	arm_serving_tuna.play("serve")
 	await get_tree().create_timer(1.5).timeout
 	tuna.update_availability(true)
+	cat.tuna_hunting = true # Cat will go toward tuna
+
+
+### --- Signal Functions --- ###
+
+# When the cat leaves the area under the umbrella
+func _on_umbrella_area_exited(area):
+	if area.get_parent() is Cat:
+		get_tree().change_scene_to_packed(ending)
 
 # time for some fish!
 func _on_tuna_timer_timeout():
@@ -29,10 +46,17 @@ func _on_tuna_timer_timeout():
 
 # when tuna has been picked up, hides it and activates a form of bonus
 func _on_tuna_bonus_activated():
-	tuna.update_availability(false)
+	tuna.update_availability(false) # Tuna is no longer available.
 	print("tuna bonus! yeah!")
-	# TODO
-	# decide if bonus is static (score += x)
-	# or if it's a multiplier for a period of time
+	Global.tunas_collected += 1 # Increase tunas collected
 	
-	# either restart the tuna_timer immediately or after the multiplier period
+	# Cat no longer beelines to the tuna
+	cat.tuna_hunting = false
+	
+	# Reset the tuna timer with a random time between 30 and 100 seconds.
+	tuna_timer.wait_time = randf_range(30.0,100.0)
+	tuna_timer.start()
+
+# Every second, increase the second score by one
+func _on_score_timer_timeout():
+	Global.seconds += 1

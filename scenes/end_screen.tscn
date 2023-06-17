@@ -1,0 +1,63 @@
+[gd_scene load_steps=2 format=3 uid="uid://r7aqjo22xi2f"]
+
+[ext_resource type="Script" path="res://scenes/end_screen.gd" id="1_2c1xm"]
+
+[node name="EndScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2c1xm")
+
+[node name="SecondsLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 260.0
+offset_right = 600.0
+offset_bottom = 286.0
+text = "Seconds Cat was dry:"
+horizontal_alignment = 2
+
+[node name="Seconds" type="Label" parent="."]
+layout_mode = 0
+offset_left = 610.0
+offset_top = 260.0
+offset_right = 650.0
+offset_bottom = 286.0
+text = "000"
+
+[node name="TunaLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 290.0
+offset_right = 600.0
+offset_bottom = 316.0
+text = "Tuna bonus:"
+horizontal_alignment = 2
+
+[node name="Tuna" type="Label" parent="."]
+layout_mode = 0
+offset_left = 610.0
+offset_top = 290.0
+offset_right = 650.0
+offset_bottom = 316.0
+text = "000"
+
+[node name="FinalLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 320.0
+offset_right = 600.0
+offset_bottom = 346.0
+text = "Total final score:"
+horizontal_alignment = 2
+
+[node name="Final" type="Label" parent="."]
+layout_mode = 0
+offset_left = 610.0
+offset_top = 320.0
+offset_right = 650.0
+offset_bottom = 346.0
+text = "000"

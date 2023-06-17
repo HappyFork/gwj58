@@ -16,6 +16,7 @@ extends Node2D
 # Regular variables
 var can_move_left = true
 var can_move_right = true
+var tuna_hunting = false
 
 
 
@@ -36,6 +37,8 @@ func decide():
 	
 	var choice = randi_range(0, 2) # Pick a random number between 0-2
 	# 0 = Wait, 1 = Move right, 2 = Move left
+	if tuna_hunting:
+		choice = 1
 	
 	# I'm embarrassed by how much copy-pasted code is below.
 	# TODO: Random movement speed and distance? At least distance.
