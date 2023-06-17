@@ -2,4 +2,3 @@ res://cat_umbrella_prototype.tscn
 res://nodes/umbrella.tscn
 res://nodes/cat.tscn
 res://scenes/main_menu.tscn
-res://nodes/cat.gd

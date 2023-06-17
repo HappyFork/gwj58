@@ -1,5 +1,4 @@
 class_name Cat
-
 extends Node2D
 
 

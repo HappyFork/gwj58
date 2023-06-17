@@ -1,6 +1,6 @@
-[gd_scene load_steps=37 format=3 uid="uid://dw53qcq418283"]
+[gd_scene load_steps=37 format=3 uid="uid://cia2n0d436rro"]
 
-[ext_resource type="Script" path="res://nodes/cat.gd" id="1_vj0s0"]
+[ext_resource type="Script" path="res://nodes/cat.gd" id="1_jutyh"]
 [ext_resource type="Texture2D" uid="uid://bq4fkn11ygqcq" path="res://assets/idle_spritesheet.png" id="2_v4573"]
 [ext_resource type="Texture2D" uid="uid://81a31ngokoh7" path="res://assets/walk_spritesheet.png" id="3_we5pi"]
 
@@ -232,7 +232,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1gk7m"]
 
 [node name="Cat" type="Node2D"]
-script = ExtResource("1_vj0s0")
+script = ExtResource("1_jutyh")
 
 [node name="ActionTimer" type="Timer" parent="."]
 one_shot = true
