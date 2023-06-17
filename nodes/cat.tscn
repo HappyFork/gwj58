@@ -1,6 +1,6 @@
-[gd_scene load_steps=37 format=3 uid="uid://dw53qcq418283"]
+[gd_scene load_steps=37 format=3 uid="uid://dabap304xbdb"]
 
-[ext_resource type="Script" path="res://nodes/cat.gd" id="1_vj0s0"]
+[ext_resource type="Script" path="res://nodes/cat.gd" id="1_iroav"]
 [ext_resource type="Texture2D" uid="uid://bq4fkn11ygqcq" path="res://assets/idle_spritesheet.png" id="2_v4573"]
 [ext_resource type="Texture2D" uid="uid://81a31ngokoh7" path="res://assets/walk_spritesheet.png" id="3_we5pi"]
 
@@ -232,7 +232,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1gk7m"]
 
 [node name="Cat" type="Node2D"]
-script = ExtResource("1_vj0s0")
+script = ExtResource("1_iroav")
 
 [node name="ActionTimer" type="Timer" parent="."]
 one_shot = true
@@ -245,16 +245,17 @@ sprite_frames = SubResource("SpriteFrames_l674a")
 animation = &"walking"
 
 [node name="TailArea" type="Area2D" parent="."]
+position = Vector2(-35, 0)
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TailArea"]
-position = Vector2(-50, 0)
 shape = SubResource("RectangleShape2D_yp1f7")
 
 [node name="HeadArea" type="Area2D" parent="."]
+position = Vector2(35, 0)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HeadArea"]
-position = Vector2(50, 0)
 shape = SubResource("RectangleShape2D_1gk7m")
 
 [connection signal="timeout" from="ActionTimer" to="." method="_on_action_timer_timeout"]

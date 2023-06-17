@@ -1,12 +1,12 @@
 [gd_scene load_steps=33 format=3 uid="uid://lhwk0kq71we1"]
 
 [ext_resource type="Script" path="res://cat_umbrella_prototype.gd" id="1_ysic5"]
-[ext_resource type="PackedScene" uid="uid://cxs4p67nbq872" path="res://nodes/umbrella.tscn" id="2_prl76"]
-[ext_resource type="PackedScene" uid="uid://dw53qcq418283" path="res://nodes/cat.tscn" id="3_ywddm"]
-[ext_resource type="Texture2D" uid="uid://dcmcalkmm0ry1" path="res://assets/QuestionMark.png" id="4_y7ttk"]
+[ext_resource type="PackedScene" uid="uid://0eo5rqtd02n2" path="res://nodes/umbrella.tscn" id="2_prl76"]
+[ext_resource type="PackedScene" uid="uid://dabap304xbdb" path="res://nodes/cat.tscn" id="3_ywddm"]
 [ext_resource type="Texture2D" uid="uid://tcv1xkrx43ef" path="res://assets/main_scene.png" id="5_t1vtg"]
 [ext_resource type="Texture2D" uid="uid://bsqqljx2jp3rb" path="res://assets/arm-tuna.png" id="6_s8nap"]
 [ext_resource type="PackedScene" uid="uid://h0lr2m7322pi" path="res://nodes/tuna.tscn" id="7_kc8do"]
+[ext_resource type="Texture2D" uid="uid://3rd5hf7ssawb" path="res://assets/tuna.png" id="7_y1k2m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4iy10"]
 size = Vector2(200, 40)
@@ -195,16 +195,9 @@ size_flags_vertical = 4
 texture = ExtResource("5_t1vtg")
 metadata/_edit_use_anchors_ = true
 
-[node name="Umbrella" parent="." instance=ExtResource("2_prl76")]
-position = Vector2(599, 514)
-
-[node name="Cat" parent="." instance=ExtResource("3_ywddm")]
-position = Vector2(599, 556)
-
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 modulate = Color(0.470588, 1, 1, 1)
-light_mask = 3
-position = Vector2(600, -110)
+position = Vector2(590, -137)
 amount = 2000
 lifetime = 2.0
 preprocess = 1.0
@@ -213,11 +206,14 @@ emission_shape = 3
 emission_rect_extents = Vector2(600, 1)
 direction = Vector2(0, 1)
 initial_velocity_max = 152.38
+scale_amount_min = 5.0
+scale_amount_max = 5.0
 
-[node name="QuestionMark" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(955, 206)
-texture = ExtResource("4_y7ttk")
+[node name="Umbrella" parent="." instance=ExtResource("2_prl76")]
+position = Vector2(599, 514)
+
+[node name="Cat" parent="." instance=ExtResource("3_ywddm")]
+position = Vector2(599, 556)
 
 [node name="StopMovingLeft" type="Area2D" parent="."]
 position = Vector2(0, 557)
@@ -248,9 +244,30 @@ wait_time = 3.0
 one_shot = true
 autostart = true
 
+[node name="ScoreTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="TunaModeIndicator" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1106, 41)
+texture = ExtResource("7_y1k2m")
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = 33.0
+offset_top = 25.0
+offset_right = 96.0
+offset_bottom = 51.0
+
+[node name="TunaLabel" type="Label" parent="."]
+offset_left = 33.0
+offset_top = 68.0
+offset_right = 73.0
+offset_bottom = 91.0
+
 [connection signal="area_exited" from="Umbrella" to="." method="_on_umbrella_area_exited"]
 [connection signal="area_entered" from="StopMovingLeft" to="Cat" method="_on_stop_moving_left_area_entered"]
 [connection signal="area_exited" from="StopMovingLeft" to="Cat" method="_on_stop_moving_left_area_exited"]
 [connection signal="area_entered" from="StopMovingRight" to="Cat" method="_on_stop_moving_right_area_entered"]
 [connection signal="area_exited" from="StopMovingRight" to="Cat" method="_on_stop_moving_right_area_exited"]
 [connection signal="timeout" from="TunaTimer" to="." method="_on_tuna_timer_timeout"]
+[connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]

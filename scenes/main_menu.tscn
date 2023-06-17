@@ -39,4 +39,56 @@ Art by subvertissement
 "
 horizontal_alignment = 1
 
+[node name="ControlLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 151.0
+offset_right = 173.0
+offset_bottom = 177.0
+text = "Control mode:"
+
+[node name="ControlOptions" type="OptionButton" parent="."]
+layout_mode = 0
+offset_left = 191.0
+offset_top = 150.0
+offset_right = 308.0
+offset_bottom = 181.0
+item_count = 2
+popup/item_0/text = "Mouse"
+popup/item_0/id = 0
+popup/item_1/text = "Keyboard"
+popup/item_1/id = 1
+
+[node name="ScoreLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 209.0
+offset_right = 164.0
+offset_bottom = 235.0
+text = "Score mode:"
+
+[node name="ScoreOptions" type="OptionButton" parent="."]
+layout_mode = 0
+offset_left = 188.0
+offset_top = 207.0
+offset_right = 313.0
+offset_bottom = 238.0
+item_count = 3
+popup/item_0/text = "Multiplier"
+popup/item_0/id = 0
+popup/item_1/text = "Flat Bonus"
+popup/item_1/id = 1
+popup/item_2/text = "Duration"
+popup/item_2/id = 2
+
+[node name="ErrorLabel" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 102.0
+offset_top = 87.0
+offset_right = 293.0
+offset_bottom = 139.0
+text = "Please select these options before starting"
+autowrap_mode = 2
+
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]

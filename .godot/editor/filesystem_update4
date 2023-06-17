@@ -1,5 +1,9 @@
-res://cat_umbrella_prototype.tscn
-res://nodes/umbrella.tscn
 res://nodes/cat.tscn
+res://nodes/umbrella.tscn
+res://cat_umbrella_prototype.tscn
 res://scenes/main_menu.tscn
+res://scenes/main_menu.gd
+res://nodes/tuna.tscn
+res://cat_umbrella_prototype.gd
+res://global.gd
 res://nodes/cat.gd
