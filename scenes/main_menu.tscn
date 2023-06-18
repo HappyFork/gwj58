@@ -23,22 +23,22 @@ text = "Play"
 
 [node name="TitleLabel" type="Label" parent="."]
 layout_mode = 1
-offset_left = 494.0
+offset_left = 426.0
 offset_top = 300.0
-offset_right = 659.0
+offset_right = 726.0
 offset_bottom = 337.0
 size_flags_vertical = 0
 text = "Kitty Cover :3c"
 label_settings = SubResource("LabelSettings_lj72t")
+horizontal_alignment = 1
 
 [node name="CreditsLabel" type="Label" parent="."]
 layout_mode = 0
-offset_left = 486.0
+offset_left = 426.0
 offset_top = 350.0
-offset_right = 666.0
-offset_bottom = 402.0
-text = "Code by Happyfork
-Art by subvertissement
+offset_right = 726.0
+offset_bottom = 389.0
+text = "By Happyfork and subvertissement
 "
 horizontal_alignment = 1
 
@@ -52,10 +52,10 @@ texture_normal = ExtResource("2_tisp1")
 
 [node name="KeyboardPlay" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 624.0
-offset_top = 139.0
-offset_right = 724.0
-offset_bottom = 189.0
+offset_left = 565.0
+offset_top = 136.0
+offset_right = 665.0
+offset_bottom = 186.0
 texture_normal = ExtResource("3_2qmrr")
 
 [connection signal="pressed" from="MousePlay" to="." method="_on_mouse_play_pressed"]

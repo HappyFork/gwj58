@@ -1,5 +1,5 @@
 2a60927148abd1d33b818b535e306557
-::res://::1687047771
+::res://::1687052527
 cat_umbrella_prototype.gd::GDScript::-1::1687039201::0::1::::<>Node2D<>::
 cat_umbrella_prototype.tscn::PackedScene::787882885379260618::1687047468::0::1::::<><>::res://cat_umbrella_prototype.gd<>uid://yjuiarqahubu<>uid://cia2n0d436rro<>uid://tcv1xkrx43ef<>uid://bsqqljx2jp3rb<>uid://h0lr2m7322pi
 global.gd::GDScript::-1::1687045586::0::1::::<>Node<>::
@@ -21,8 +21,8 @@ tuna.gd::GDScript::-1::1687022456::0::1::::<>Area2D<>::
 tuna.tscn::PackedScene::543631032895086218::1687047468::0::1::::<><>::res://nodes/tuna.gd<>uid://3rd5hf7ssawb
 umbrella.gd::GDScript::-1::1687047346::0::1::::<>Area2D<>::
 umbrella.tscn::PackedScene::1704340300294823806::1687047468::0::1::::<><>::res://nodes/umbrella.gd<>uid://btadv6e6iik7h<>uid://diq3l7q1lmuse<>uid://tcv1xkrx43ef
-::res://scenes/::1687047468
-end_screen.gd::GDScript::-1::1687038434::0::1::::<>Control<>::
-end_screen.tscn::PackedScene::1259299498280106499::1687047468::0::1::::<><>::res://scenes/end_screen.gd
+::res://scenes/::1687052402
+end_screen.gd::GDScript::-1::1687052402::0::1::::<>Control<>::
+end_screen.tscn::PackedScene::1259299498280106499::1687052402::0::1::::<><>::res://scenes/end_screen.gd<>uid://b13uqv2h4xcjf<>uid://bx2yt1ja7w0xf
 main_menu.gd::GDScript::-1::1687046875::0::1::::<>Control<>::
 main_menu.tscn::PackedScene::6142451966481126453::1687047468::0::1::::<><>::res://scenes/main_menu.gd<>uid://b13uqv2h4xcjf<>uid://bx2yt1ja7w0xf
