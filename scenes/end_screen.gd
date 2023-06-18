@@ -6,6 +6,7 @@ extends Control
 @onready var sec_l = $Seconds
 @onready var tun_l = $Tuna
 @onready var fin_l = $Final
+var game_scene = load("res://cat_umbrella_prototype.tscn")
 
 
 
@@ -22,3 +23,13 @@ func _ready():
 	var s = Global.tunas_collected * 42
 	s += Global.seconds
 	fin_l.text = str(s)
+
+# Restart with mouse controls
+func _on_mouse_play_pressed():
+	Global.controls = 0
+	get_tree().change_scene_to_packed( game_scene )
+
+# Restart with keyboard controls
+func _on_keyboard_play_pressed():
+	Global.controls = 1
+	get_tree().change_scene_to_packed( game_scene )

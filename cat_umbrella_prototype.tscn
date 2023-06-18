@@ -199,21 +199,20 @@ modulate = Color(0.470588, 1, 1, 1)
 light_mask = 3
 position = Vector2(600, -110)
 amount = 2000
-lifetime = 2.0
+lifetime = 1.5
 preprocess = 1.0
 local_coords = true
 emission_shape = 3
 emission_rect_extents = Vector2(600, 1)
 direction = Vector2(0, 1)
 initial_velocity_max = 152.38
-scale_amount_min = 2.0
-scale_amount_max = 2.0
+scale_amount_max = 3.0
 
 [node name="Umbrella" parent="." instance=ExtResource("2_prl76")]
-position = Vector2(599, 514)
+position = Vector2(576, 514)
 
 [node name="Cat" parent="." instance=ExtResource("3_ywddm")]
-position = Vector2(599, 556)
+position = Vector2(576, 556)
 
 [node name="StopMovingLeft" type="Area2D" parent="."]
 position = Vector2(0, 557)
