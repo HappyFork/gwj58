@@ -26,10 +26,20 @@ func _ready():
 
 # Restart with mouse controls
 func _on_mouse_play_pressed():
+	# Reset global variables
+	Global.seconds = 0
+	Global.tunas_collected = 0
+	
+	# Set contols to mouse
 	Global.controls = 0
 	get_tree().change_scene_to_packed( game_scene )
 
 # Restart with keyboard controls
 func _on_keyboard_play_pressed():
+	# Reset global variables
+	Global.seconds = 0
+	Global.tunas_collected = 0
+	
+	# Set contols to keyboard
 	Global.controls = 1
 	get_tree().change_scene_to_packed( game_scene )

@@ -1,6 +1,7 @@
+Timer
+AudioStreamPlayer
 TextureButton
 Label
-Timer
 TextureRect
 Sprite2D
 CollisionShape2D

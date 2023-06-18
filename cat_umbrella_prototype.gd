@@ -9,6 +9,8 @@ extends Node2D
 @onready var tuna = $Tuna
 @onready var tuna_timer = $TunaTimer
 @onready var cat = $Cat
+@onready var ding = $Ding
+@onready var meow = $Meow
 
 # Regular variables
 var ending = load("res://scenes/end_screen.tscn")
@@ -30,6 +32,7 @@ func _the_fish_is_served():
 	arm_serving_tuna.play("serve")
 	await get_tree().create_timer(1.5).timeout
 	tuna.update_availability(true)
+	ding.play()
 	cat.tuna_hunting = true # Cat will go toward tuna
 
 
@@ -60,3 +63,9 @@ func _on_tuna_bonus_activated():
 # Every second, increase the second score by one
 func _on_score_timer_timeout():
 	Global.seconds += 1
+
+# When the cat finishes meowing
+func _on_meow_finished():
+	var time = randf_range( 70.0, 300.0 )
+	await get_tree().create_timer( time ).timeout # Wait from 70 to 300 secs to meow again
+	meow.play()

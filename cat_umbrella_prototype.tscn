@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://lhwk0kq71we1"]
+[gd_scene load_steps=35 format=3 uid="uid://lhwk0kq71we1"]
 
 [ext_resource type="Script" path="res://cat_umbrella_prototype.gd" id="1_ysic5"]
 [ext_resource type="PackedScene" uid="uid://yjuiarqahubu" path="res://nodes/umbrella.tscn" id="2_prl76"]
@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://tcv1xkrx43ef" path="res://assets/main_scene.png" id="5_t1vtg"]
 [ext_resource type="Texture2D" uid="uid://bsqqljx2jp3rb" path="res://assets/arm-tuna.png" id="6_s8nap"]
 [ext_resource type="PackedScene" uid="uid://h0lr2m7322pi" path="res://nodes/tuna.tscn" id="7_kc8do"]
+[ext_resource type="AudioStream" uid="uid://du2f5gw5du5cf" path="res://assets/kitten_mew-1.ogg" id="7_y0sqy"]
+[ext_resource type="AudioStream" uid="uid://dbalfd6vyxslt" path="res://assets/Ding.wav" id="8_up73i"]
+[ext_resource type="AudioStream" uid="uid://cenivlg6amkew" path="res://assets/531947__straget__the-rain-falls-against-the-parasol.wav" id="9_8jceb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4iy10"]
 size = Vector2(200, 40)
@@ -246,6 +249,19 @@ autostart = true
 [node name="ScoreTimer" type="Timer" parent="."]
 autostart = true
 
+[node name="MeowTimer" type="Timer" parent="."]
+
+[node name="Meow" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_y0sqy")
+autoplay = true
+
+[node name="Ding" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_up73i")
+
+[node name="Rain" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_8jceb")
+autoplay = true
+
 [connection signal="area_exited" from="Umbrella" to="." method="_on_umbrella_area_exited"]
 [connection signal="area_entered" from="StopMovingLeft" to="Cat" method="_on_stop_moving_left_area_entered"]
 [connection signal="area_exited" from="StopMovingLeft" to="Cat" method="_on_stop_moving_left_area_exited"]
@@ -253,3 +269,4 @@ autostart = true
 [connection signal="area_exited" from="StopMovingRight" to="Cat" method="_on_stop_moving_right_area_exited"]
 [connection signal="timeout" from="TunaTimer" to="." method="_on_tuna_timer_timeout"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
+[connection signal="finished" from="Meow" to="." method="_on_meow_finished"]

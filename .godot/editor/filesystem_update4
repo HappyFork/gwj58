@@ -1,1 +1,8 @@
 res://scenes/main_menu.tscn
+res://cat_umbrella_prototype.tscn
+res://scenes/end_screen.tscn
+res://nodes/umbrella.tscn
+res://nodes/cat.tscn
+res://nodes/tuna.tscn
+res://scenes/end_screen.gd
+res://cat_umbrella_prototype.gd

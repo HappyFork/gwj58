@@ -42,6 +42,16 @@ text = "By Happyfork and subvertissement
 "
 horizontal_alignment = 1
 
+[node name="CreditsLabel2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 376.0
+offset_top = 400.0
+offset_right = 776.0
+offset_bottom = 478.0
+text = "Sounds by AntumDeluge (OpenGameArt), InspectorJ (FreeSound), Straget (FreeSound)"
+horizontal_alignment = 1
+autowrap_mode = 2
+
 [node name="MousePlay" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 491.0
